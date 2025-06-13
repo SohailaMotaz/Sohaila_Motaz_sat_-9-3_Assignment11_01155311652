@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+
+<body>
+    <section class="py-5">
+        <div class="container">
+            <h1>Product System Management</h1>
+            <div class="w-75 mx-auto">
+                <div class="form-floating mb-3">
+                    <input oninput="validateFormInputs(this)" type="text" class="form-control" id="productNameInput"
+                        placeholder="Product Name">
+                    <span class="text-danger d-none ">Product name must be at least 3 character</span>
+                    <label for="productNameInput">Product Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input oninput="validateFormInputs(this)" type="text" class="form-control" id="productPriceInput"
+                        placeholder="Product Price">
+                    <span class="text-danger d-none">Product price must be at between 6000 and 60000</span>
+                    <label for="productPriceInput">Product Price</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input oninput="validateFormInputs(this)" list="categoryList" type="text" class="form-control"
+                        id="productCategoryInput" placeholder="Product Category">
+                    <span class="text-danger d-none">Product category must be one of the listed categories</span>
+                    <label for="productCategoryInput">Product Category</label>
+                    <datalist id="categoryList">
+                        <option value="Phones"></option>
+                        <option value="Screens"></option>
+                        <option value="Airpods"></option>
+                        <option value="Watches"></option>
+
+                    </datalist>
+                </div>
+                <div class="form-floating mb-3">
+                    <input oninput="validateFormInputs(this)" type="file" class="form-control" id="productImageInput"
+                        placeholder="Product Image">
+                    <span class="text-danger d-none">You must choose a file.</span>
+                    <label for="productImageInput">Product Image</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea oninput="validateFormInputs(this)" type="file" class="form-control" id="productDescInput"
+                        placeholder="Product Description"></textarea>
+                    <span class="text-danger d-none">Description must be between 0-250 characters</span>
+                    <label for="productDescInput">Product Description</label>
+                </div>
+                <button id="addBtn" type="submit" onclick="addProduct()" class="btn w-100 mb-3 btn-primary">Add
+                    product</button>
+                <button id="updateBtn" type="submit" onclick="updateProduct()"
+                    class="btn w-100 mb-3 btn-primary d-none">Update product</button>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section>
+        <div class="container">
+            <div class="form-floating mb-3">
+                <input type="text" oninput="searchByProductName(this)" class="form-control" id="productSearch"
+                    placeholder="Enter product name"></textarea>
+                <label for="productSearch">Enter Product name</label>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="container">
+            <div class="row gy-4">
+                <div id="products" class="d-flex flex-wrap gap-3">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+
+
+
+
+<script src="./js/index.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+
+</html>
